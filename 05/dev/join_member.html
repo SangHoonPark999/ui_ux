@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>회원가입</title>
   <style>
-    *{
+    * {
       box-sizing: border-box;
-      
     }
-    table, tr, td{
+
+    table,
+    tr,
+    td {
       border: 1px solid black;
       border-collapse: collapse;
     }
-    tr,td {
+
+    tr,
+    td {
       margin: 15px 15px;
       padding: 10px 5px;
     }
   </style>
 </head>
+
 <body>
-  <h1 style="margin: auto 20%;">회원가입</h1>
+  <h1 style="margin: auto;">회원가입</h1>
   <fieldset>
     <caption>사이트 이용정보 입력</caption>
     <table>
@@ -44,7 +50,7 @@
       </tr>
     </table>
   </fieldset>
-  
+
   <fieldset>
     <caption>개인정보 입력</caption>
     <table>
@@ -60,7 +66,8 @@
         <td><label for="Nname">닉네임</label></td>
         <td style="font-size: smaller;">공백없이 한글,영문,숫자만 입력 가능 (한글2자, 영문4자 이상) <br>
           닉네임을 바꾸시면 앞으로 1일 이내에는 변경 할 수 없습니다. <br>
-          <input type="text" name="Nname" id="Nname"></td>
+          <input type="text" name="Nname" id="Nname">
+        </td>
       </tr>
       <tr>
         <td><label for="mail">E-mail</label></td>
@@ -97,7 +104,7 @@
           <input type="text" name="adAdd" id="adAdd"><span style="font-size: smaller;">참고항목</span><br>
         </td>
       </tr>
-      
+
     </table>
   </fieldset>
 
@@ -110,7 +117,8 @@
         <col>
       <tr>
         <td>카카오톡 메세<br>지</td>
-        <td><input type="checkbox" name="kakao" id="kakao">카카오톡 메세지를 받겠습니다.<span style="font-size: small; color: rgb(243, 39, 39);">>수신체크를 하시면 세일소식을 가장먼저 받아 보실 수 있습니다.</span></td>
+        <td><input type="checkbox" name="kakao" id="kakao">카카오톡 메세지를 받겠습니다.<span
+            style="font-size: small; color: rgb(243, 39, 39);">>수신체크를 하시면 세일소식을 가장먼저 받아 보실 수 있습니다.</span></td>
       </tr>
       <tr>
         <td>메일링서비스</td>
@@ -122,23 +130,25 @@
       </tr>
       <tr>
         <td>정보공개</td>
-        <td>정보공개를 바꾸시면 앞으로 0일 이내에는 변경이 안됩니다.<br><input type="checkbox" name="info" id="info">다른분들이 나의 정보를 볼 수 있도록 합니다.</td>
+        <td>정보공개를 바꾸시면 앞으로 0일 이내에는 변경이 안됩니다.<br><input type="checkbox" name="info" id="info">다른분들이 나의 정보를 볼 수 있도록 합니다.
+        </td>
       </tr>
       <tr>
         <td>자동등록방지</td>
         <td><input width="30%" type="image" src="./images/login.png" alt="자동가입방지지">
           <input type="button" value="소리듣기">
           <input type="button" value="새로고침">
-        <input style="block-size: 70px;" type="text" name="protect" id="protect"><br>
-        지문등록방지 숫자를 순서대로 입력하세요.
+          <input style="block-size: 70px;" type="text" name="protect" id="protect"><br>
+          지문등록방지 숫자를 순서대로 입력하세요.
         </td>
       </tr>
     </table>
-    
+
   </fieldset>
   <input type="submit" value="회원가입" style="background-color: hwb(315 49% 10%);">
   <input type="reset" value="취소">
-  
-  
+
+
 </body>
+
 </html>
