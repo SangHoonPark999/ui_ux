@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+  *{
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .wrap{
+    width: 1200px;
+    margin: 0 auto;
+    padding: 10px 15px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  p {
+    text-align: center;
+  }
+  /* header영역 */
+  header{
+    width: 1000px;
+    height: 130px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-between;
+    border-radius: 20px;
+  }
+  /* section영역 */
+  section{
+    width: 100%;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-content: center;
+    
+  }
+  .section-article {
+    width: 49%;
+    border: 1px solid rgb(180, 57, 57);
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+  .section-article > section{
+    width: 100%;
+    height: 300px;
+    border: 1px solid black;
+  }
+  .section-aside {
+    width: 49%;
+    border: 1px solid rgb(7, 31, 169);
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+  .section-aside > article {
+    width: 100%;
+    height: 200px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+  }
+
+  /* footer영역 */
+  footer{
+    width: 100%;
+    height: 150px;
+    border: 1px solid black;
+    padding: 10px;
+  }
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+    <input width="10%" type="image" src="./../../08/images/photo.jpg" alt="로고">
+    <input type="search" name="search" id="search" size="100%">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    </header>
+    <section>
+      <article class="section-article"><p>&lt; article &gt;</p>
+      <section><p>&lt;section1&gt;</p></section>
+      <section><p>&lt;section2&gt;</p></section>
+      </article>
+      <aside class="section-aside"><p>&lt; aside &gt;</p>
+      <article><p>&lt; article1 &gt;</p></article>
+      <article><p>&lt; article2 &gt;</p></article>
+      <article><p>&lt; article3 &gt;</p></article>
+      </aside>
+    </section>
+    <footer><p>&lt; footer &gt;</p></footer>
+  </div>
+</body>
+</html>
