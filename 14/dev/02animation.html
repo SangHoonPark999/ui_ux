@@ -16,10 +16,7 @@
       width: 100px;
       height: 100px;
       background-color: red;
-      animation-name: moveBox;
-      animation-duration: 3s;
-      animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
-      animation-iteration-count: 3;
+      animation: moveBox 3s linear infinite alternate,moveBackgroundColor 3s linear infinite alternate ;
     }
 
     @keyframes moveBox {
@@ -28,6 +25,17 @@
       }
       to{
         transform: translateX(900px);
+      }
+    }
+    @keyframes moveBackgroundColor {
+      0%{
+        background-color: red;
+      }
+      50%{
+        background-color: yellow;
+      }
+      100%{
+        background-color: green;
       }
     }
   </style>
