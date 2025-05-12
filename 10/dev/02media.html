@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    h1{
+      color: red;
+      background-color: beige;
+      border: 1px solid black;
+      margin-bottom: 10px;
+      text-align: center; /*인라인 가운대로 정렬하는방법*/
+    }
+    /* 모바일 */
+    @media screen and (max-width:600px) {
+      .header1 {
+      color: rgb(27, 170, 22);
+      background-color: rgb(216, 216, 9);
+      border: 1px solid black;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    }
+    /* 테블릿릿 */
+    @media screen and (min-width:600px) and (max-width:990px) {
+      .header2 {
+      color: rgb(176, 15, 15);
+      background-color: rgb(255, 255, 255);
+      border: 1px solid black;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    }
+    /* 일반PC */
+    @media screen and (min-width:990px) and (max-width:1200px) {
+      .header3 {
+      color: rgb(0, 0, 0);
+      background-color: rgb(168, 145, 145);
+      border: 1px solid black;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    }
+    @media screen and (min-width:1200px) and (max-width:1400px) {
+      .header4 {
+      color: rgb(9, 12, 219);
+      background-color: rgb(211, 227, 35);
+      border: 1px solid black;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    }
+  </style>
+</head>
+<body>
+  <h1 class="header1">HTML1</h1>
+  <h1 class="header2">HTML2</h1>
+  <h1 class="header3">HTML3</h1>
+  <h1 class="header4">HTML4</h1>
+</body>
+</html>
