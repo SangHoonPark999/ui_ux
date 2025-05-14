@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let quizNum = prompt('몇까지 3의 배수를 찾을까요');
+    let count = 0;
+    if(quizNum !== null) {
+      for(let i =1;i<=quizNum;i++) {
+        if(i % 3 === 0){
+          count++;
+          document.write(`${i}, <br>`);
+        }
+      }
+      document.write(`${quizNum}까지의 3의배수는 ${count}개`);
+    }
+  
+  </script>
+</body>
+
+</html>
