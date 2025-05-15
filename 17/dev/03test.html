@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+.wrap{
+  width: 400px;
+  height: 500px;
+  border: 1px solid black;
+}
+fieldset{
+  display: flex;
+  flex-direction: column;
+}
+ul{
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+ul>li{
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+  text-align: center;
+}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <fieldset>
+      <label for="x">x</label><input type="text" name="x" id="x">
+      <label for="y">y</label><input type="text" name="y" id="y">
+      <label for="result">result</label><input type="text" name="result" id="result">
+    </fieldset>
+    <ul>
+      <li id="pl">+</li>
+      <li id="mi">-</li>
+      <li id="di">/</li>
+      <li id="mu">*</li>
+      <li id="cl">clr</li>
+    </ul>
+  </div>
+  <script>
+    let xobj = document.querySelector('#x');
+    let yobj = document.querySelector('#y');
+    let reobj = document.querySelector('#result');
+    let ariList = document.querySelectorAll("li");
+    let plo = document.querySelector('#pl')
+    let mio = document.querySelector('#mi')
+    let dio = document.querySelector('#di')
+    let muo = document.querySelector('#mu')
+    let clo = document.querySelector('#cl')
+
+    plo.onclick = function(){
+     let x = parseInt(xobj.value);
+     let y = parseInt(yobj.value);
+      let sum = x + y;
+      reobj.value = sum;
+    };
+
+
+    // for(let i=0;i<ariList.length;i++){
+    //     ariList[i].onclick = function(e){
+    //     if(ariList[i] === ariList[0]){
+    //      reobj = parseInt(xobj) + parseInt(yobj);
+          
+    //     }else if(ariList[i] === ariList[1]){
+    //       reobj = parseInt(xobj) - parseInt(yobj);
+          
+    //     }else if(ariList[i] === ariList[2]){
+    //       reobj = parseInt(xobj) / parseInt(yobj);
+          
+    //     }else if(ariList[i] === ariList[3]){
+    //       reobj = parseInt(xobj) * parseInt(yobj);
+          
+          
+    //     }else {
+    //       return String(result);
+    //     }
+    //   }
+    //}
+   
+
+    // let x =prompt("x값을 입력하세요");
+    // let y =prompt("y값을 입력하세요");
+    // function sumMulti(){
+    //   if(x === y){
+    //    result = x * y;
+    //   }else {
+    //    result = x + y;
+    //   }
+    // }
+    // sumMulti();
+    // document.write(`result = ${result}`);
+  </script>
+</body>
+</html>

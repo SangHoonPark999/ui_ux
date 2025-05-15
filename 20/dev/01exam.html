@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      box-sizing: border-box;
+    }
+    .wrap{
+      width: 1120px;
+      margin: 0 auto;
+      border: 4px dotted black;
+      padding: 10px;
+    }
+    /* 공지사항 작성하기 style */
+    form{
+      margin-bottom: 10px;
+    }
+    ul{
+      list-style-type: none;
+      padding: 0;
+    }
+    ul > li {
+      margin-bottom: 10px;
+    }
+    ul > li:nth-child(2){
+      height: 160px;
+      display: flex;
+      align-items: center;
+    }
+    label{
+      display: inline-block;
+      width: 70px;
+      text-align: center;
+    }
+    textarea#content {
+      resize: none;
+    }
+    input[type="submit"] {
+      margin-left: 110px;
+    }
+    hr {
+      margin-bottom: 10px;
+    }
+    /* tableList */
+    table {
+      width: 100%;
+    }
+    table,th,tr,td {
+      border: 1px solid black;
+    }
+    td{
+      padding: 5px;
+    }
+    thead, tfoot {
+      background-color: rgb(255, 108, 50);
+      font-weight: 700;
+      color: white;
+      font-size: 1rem;
+    }
+    tbody{
+      background-color: beige;
+    }
+    td > a {
+      display: inline-block;
+      text-decoration: none;
+      color: black;
+      border: 1px solid black;
+      width: 100%;
+      text-align: center;
+      padding: 3px;
+      background-color: rgb(201, 200, 199);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrap">
+    <!-- 공지사항항 -->
+    <form method='post' action='insert.no'>
+        <fieldset>
+          <legend>공지사항 작성하기</legend>
+          <ul>
+            <li><label for="subject">제목</label><input type="text" name="title" id="subject" size="30px"></li>
+            <li><label for="content">내용</label><textarea name="content" id="content" cols="30" rows="10"></textarea></li>
+            <li><label for="file">첨부파일</label><input type="file" name="uploadFile" id="file"></li>
+          </ul>
+          <input type="submit" value="전송하기">
+        </fieldset>
+    </form>
+    <hr>
+    <!-- table -->
+    <table>
+      <colgroup>
+        <col style="width: 5%;">
+        <col style="width: 50%;">
+        <col style="width: 10%;">
+        <col style="width: 15%;">
+        <col style="width: 15%;">
+        <col style="width: 5%;">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>1</th>
+          <th colspan="2">2</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td><a href="http://">바로가기</a></td>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td><a href="http://">바로가기</a></td>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td><a href="http://">바로가기</a></td>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td><a href="http://">바로가기</a></td>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td><a href="http://">바로가기</a></td>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4">1</td>
+          <td colspan="2">5</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+</body>
+</html>
