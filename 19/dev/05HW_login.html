@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log_in</title>
+  <style>
+    fieldset{
+      border: none;
+    }
+    .wrap{
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+      <h6>2025.05.15 박 상 훈</h6>
+    </header>
+  <div class="wrap">
+    <form method='method' action='action'>
+      <fieldset>
+        <caption>로그인</caption>
+        <table>
+          <tr>
+            <td><label for="mamber1">회원</label><input type="radio" name="mamber1" id="mamber1">
+            <label for="mamber2">비회원(주문조회)</label><input type="radio" name="mamber2" id="mamber2"></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><input type="text" name="id" id="id" placeholder="11번가 아이디"><br>
+              <input type="password" name="pw" id="pw">
+            </td>
+            <td><input type="image" src="./../images/login.png" alt=""></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" name="" id="">아이디저장</td>
+            <td><span style="flood-color: rgb(213, 217, 220); font-size: smaller;">otp로그인</span><input type="checkbox" name="" id=""></td>
+          </tr>
+          <tr>
+            <td><input type="button" value="회원가입"><input type="button" value="아이디 찾기"><input type="button" value="비밀번호 찾기"></td>
+            <td></td>
+          </tr>
+        </table>  
+      </fieldset>
+    </form>
+  </div>
+  
+</body>
+</html>

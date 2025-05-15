@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style></style>
+</head>
+<body>
+  <div class="wrap">
+    <button id="popup">팝업창 열기</button>
+  </div>
+  <script>
+    // 1.객체를 찾는다.
+    let popup = document.querySelector("#popup");
+    let popupClose = document.querySelector("#popupClose");
+    // 2.해당된 객체(속성, context, style, event);
+    popup.onclick = function(event){
+      let windowproxy =  window.open("02event.html","event", "width=700, height=300,left-100,top100");
+      if(windowObject === null){
+        window.alert("고객님 브라우저 창에서 팝업기능 설정해주세요. ")
+      }
+    };
+    
+
+
+  </script>
+</body>
+</html>

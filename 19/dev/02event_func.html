@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      box-sizing: border-box;
+    }
+    .wrap{
+      width: 1120px;
+      margin: 0 auto;
+      border: 1px solid black;
+    }
+    .content{
+      width: 60%;
+      margin: 0 auto;
+      border: 1px solid black;
+      text-align: center;
+      padding: 10px;
+    }
+    #img-main{
+      width: 80%;
+      border: 1px solid black;
+    }
+    .content-img{
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      border: 1px solid black;
+    }
+    .img-sub{
+      width: 33%;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="content">
+      <img src="./../images/coffee-blue.jpg" alt="커피" id="img-main">
+      <!-- <img src="./../images/coffee-blue.jpg" alt="커피" id="img-main" onmouseover="changePic()" onmouseleave="originPic()"> -->
+      <div class="content-img">
+        <img src="./../images/coffee-blue.jpg" alt="커피" class="img-sub">
+        <img src="./../images/coffee-gray.jpg" alt="커피" class="img-sub">
+        <img src="./../images/coffee-pink.jpg" alt="커피" class="img-sub">
+      </div>
+    </div>
+  </div>
+  <script>
+    //객채찾기
+    let imgMain = document.querySelector("#img-main");//1개
+    
+    //이벤트 함수설정 2번쨰 방법
+    imgMain.onmouseover = changePic;
+    imgMain.onmouseleave = originPic;
+    //이벤트 함수설정 3번쨰 방법
+    // imgMain.onmouseover = ()=>imgMain.src = './../images/coffee-gray.jpg';
+    // imgMain.onmouseleave = originPic;
+
+    //이벤트 함수 설정
+    function changePic(){
+      imgMain.src = './../images/coffee-gray.jpg';
+    };
+    function originPic(){
+      imgMain.src = './../images/coffee-blue.jpg';
+    };
+
+    //이벤트 4번째 방법(자주사용)
+    imgMain.addEventListener("mouseover",()=>{imgMain.src = './../images/coffee-gray.jpg'},false);
+    imgMain.addEventListener("mouseleave" ,originPic, false);
+  </script>
+</body>
+</html>
