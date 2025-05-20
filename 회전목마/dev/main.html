@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    ul{
+      list-style: none;
+    }
+    a{
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* 전체 레이아웃웃 */
+    #content {
+      width: 1000px;
+      margin: 100px auto 0;
+      border-radius: 20px;
+      position: relative;
+    }
+
+    /* 슬라이드 쇼 이미지 처리리*/
+    #slide_show {
+      width: 100%;
+      height: 300px;
+      position: relative;
+
+    }
+
+    img {
+      max-width: 100%;
+      height: 100%;
+      position: absolute;
+      border-radius: 20px;
+    }
+
+    /* 네비게이션 처리 */
+    #navileft {
+      position: absolute;
+      bottom: 50%;
+      left: 9%;
+      transform: translate(-50%, 50%);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: rgba(203, 232, 255, 0.4);
+      z-index: 1;
+    }
+
+    #naviright {
+      position: absolute;
+      bottom: 50%;
+      right: 9%;
+      transform: translate(50%, 50%);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: rgba(203, 232, 255, 0.4);
+      z-index: 1;
+    }
+
+    #navileft:hover,
+    #naviright:hover {
+      color: aliceblue;
+      cursor: pointer;
+    }
+
+    /* indicator */
+    #indicator {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(186, 186, 186,0.4);
+      z-index: 1;
+    }
+
+    #indicator i {
+      font-weight: 700;
+      
+      border: 1px dotted black;
+    }
+    #indicator i:hover{
+      color: rgb(186, 186, 186);
+    }
+    /* indicator 활성화 배경색 */
+    .active {
+      color: rgb(249,150,28);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div id="content">
+      <div id="slide_show">
+        <a href="#"><img src="./../media/slide-1.jpg" alt="#"></a>
+        <a href="#"><img src="./../media/slide-2.jpg" alt="#"></a>
+        <a href="#"><img src="./../media/slide-3.jpg" alt="#"></a>
+        <a href="#"><img src="./../media/slide-4.jpg" alt="#"></a>
+      </div>
+      <i class="fa-solid fa-circle-chevron-left" id="navileft"></i>
+      <i class="fa-solid fa-circle-chevron-right" id="naviright"></i>
+      
+      <div id="indicator">
+        <a href="#" class="active"><i class="fa-solid fa-circle-dot"></i></a>
+        <a href="#"><i class="fa-solid fa-circle-dot"></i></a>
+        <a href="#"><i class="fa-solid fa-circle-dot"></i></a>
+        <a href="#"><i class="fa-solid fa-circle-dot"></i></a>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      // 1.객체찾기
+      const content = document.querySelector("#content");           //회전목마 전체레이아웃
+      const imgList = document.querySelectorAll("#slide_show img"); //회전목마 이미지배열리스트노드
+      const navileft = document.querySelector("#navileft");         //회전목마 왼쪽네비게이트
+      const naviright = document.querySelector("#naviright");       //회전목마 오른쪽네비게이트트
+      const indicatorList = document.querySelectorAll("#indicator >a"); //회전목마 인디케이터 a
+
+      let list = [1,0,0,0];
+      let timerId; //타이머 핸들들
+      //함수 시간에 따라서 이미지 화면 1, 인디케이터 1 선택이 되서 화면에 보여줘야한다.
+      function listArray(){
+        for(let i=0;i<list.length;i++){
+          imgList[i].style.zIndex = list[i];
+        }
+        for(let i=0;i<indicatorList;i++){
+          indicatorList[i].classList.remove('active');
+        }
+        let index = list.indexOf(1);
+        indicatorList[index].classList.add('active');
+      }
+      listArray();
+
+      //왼쪽네비게이터 클릭 왼쪽화면으로 움직이게 한다.
+      navileft.addEventListener("click",()=>{
+        //let list = [1,0,0,0]; 왼쪽에서 뺴서 오른쪽 입력 [0,0,0,1]
+        let value = list.shift();
+        list.push(value);
+        listArray();
+      });
+      //오른쪽 네비게이터 클릭 왼쪽화면으로 움직이게 한다.
+      naviright.addEventListener("click",()=>{
+        //let list = [1,0,0,0]; 오른쪽에서 뺴서 왼쪽 입력 [0,1,0,0]
+        list.unshift(list.pop());
+        listArray();
+      });
+
+      // 3초마다 naviright기능을 불러준다.
+      function startTimer(){
+        timerId = setInterval(()=>{
+          list.unshift(list.pop());
+        listArray();
+        },3000);
+      }
+      startTimer();
+      //contain영역에 마우스가 올라가면 타이머를 멈추게 한다.
+      content.addEventListener("mouseenter",()=>{clearInterval(timerId)});
+      //contain영역에 마우스가 나가면 타이머를 작동 한다.
+      content.addEventListener("mouseleave",()=>{startTimer()});
+
+      //indicator 클릭하면 해당되는 화면으로 이동해야한다.
+      for(let i=0;i<indicatorList.length;i++){
+        indicatorList[i].addEventListener("click",()=>{
+          list = [0,0,0,0];
+          list[i] = 1;
+          listArray();
+        });
+      }
+
+
+    });//DOMContentLoaded.end
+  </script>
+</body>
+
+</html>
